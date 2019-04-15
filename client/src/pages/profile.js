@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Profiletron from "../components/Profile-tron";
-import cards from '../cards.json';
+import Wrapper from "../components/wrapper"
+import ProfileCard from "../components/profileCard";
+// import cards from '../cards.json';
 import '../App.css';
 
 class Profile extends Component {
@@ -10,8 +11,12 @@ class Profile extends Component {
 
     render(){
         return(
+            <Wrapper>
+                <ProfileCard></ProfileCard>
+
+            </Wrapper>
            
-            <Profiletron></Profiletron>
+            
 
         )
     }
