@@ -26,7 +26,6 @@ class Frontend extends React.Component {
     }
  
     handleOptionChange = event => {
-        event.preventDefault()
         const{name, value} = event.target
         this.setState({
           [name]: value
