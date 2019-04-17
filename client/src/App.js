@@ -16,7 +16,7 @@ import Profile from './pages/profile';
 class App extends Component {
 
 	state = {
-		fields: {},  
+		fields: {},        
 	};
 
 	onSubmit = fields =>{

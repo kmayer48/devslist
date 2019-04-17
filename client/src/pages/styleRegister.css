@@ -4,10 +4,69 @@ body {
     padding-left: 5px;
   }
   
-  .box {
-    width: 99%;
-    border: 1px solid #eee;
-    box-shadow: 10px 10px 5px #888888;
-    padding: 10px;
-    padding-bottom: 20px;
-  }
+.box {
+  width: 60%;
+  height: auto;
+  display: flow-root;
+  margin: 80px auto 60px auto;
+  border: 1px solid #eee;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 30px;
+  padding-bottom: 60px;
+  background-color: rgb(238, 235, 235);
+}
+
+.profileImg {
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+}
+
+.checkBoxes {
+  width: 15px;
+  float: left;
+}
+
+.checkBoxLabels {
+  float: left;
+  margin-right: 10px
+}
+
+input {
+  border-radius: 4px;
+  width: 60%;
+}
+
+body {
+  background-color: rgb(1, 1, 53);
+}
+
+textarea {
+  width:75%;
+  height: 120px;
+}
+
+.submitMe {
+  display: flow-root;
+  margin-top: 10px;
+  background-image: linear-gradient(rgb(0, 0, 160),rgb(2, 2, 88));
+  border-radius: 8px;
+  color: #ece8e8;
+  box-shadow: black 2px 3px 5px;
+  transition: height 4s;
+
+}
+
+.submitMe{transition-timing-function: ease;}
+
+:hover.submitMe {
+  display: flow-root;
+  margin-top: 10px;
+  background-image: linear-gradient(rgb(0, 0, 160),rgb(2, 2, 88));
+  border-radius: 8px;
+  color: #f8f5f5;
+  box-shadow: black 4px 6px 10px;
+  height: 35px;
+  width: 110%
+
+}
