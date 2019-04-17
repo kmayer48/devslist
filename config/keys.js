@@ -1,6 +1,9 @@
 module.exports = {
     google: {
-        clientID: "779877233014-83tcprkmhar9t67o5sq2qgha4rm8acd8.apps.googleusercontent.com",
-        clientSecret: "w3DWMJiLPGkAWKAnBy-nktp-"
+        clientID: "682295732052-dj1urktb134ngoohstorticma5f24oav.apps.googleusercontent.com",
+        clientSecret: "0C74iEc7NsNgtPDfXv2w6aE5"
+    },
+    session: {
+        cookieKey: 'devslistisawesome'
     }
 };
