@@ -10,7 +10,7 @@ const Card = props => (
           <h5 className="card-name">{props.name}</h5>
           <h6 className="card-text">Skills:</h6>
           <h6 className="card-skills">{props.skills}</h6>
-          <a href="/" className="btn btn-primary mt-5">View Profile</a>
+          <a href="/profile" className="btn btn-primary mt-5">View Profile</a>
         </div>
        </div>
     </div>
