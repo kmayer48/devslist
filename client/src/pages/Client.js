@@ -1,5 +1,7 @@
 import React from 'react';
 import Radio from "../components/Radio/Radio";
+import API from "../utils/API";
+
 
 
  
@@ -34,10 +36,25 @@ class Frontend extends React.Component {
     handleSubmit = (event) => {
     event.preventDefault()
         console.log(
-            this.state
-        
-        )} 
-        // Make API call 
+            this.state )
+        API.postQuiz(this.state) 
+        .then(res => 
+        this.setState({
+            company  : "",
+            businessAge : "",
+            websiteGoal : "",
+            siteBranding : "",
+            siteInfoStorage : "",
+            siteLogo : "",
+            mobileApp : "",
+            mobileResponsive : "",
+            meetDev : ""
+        }))
+        .catch(err => console.log(err))
+
+        } 
+
+            
   
  
     render() {

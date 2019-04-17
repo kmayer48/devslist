@@ -12,6 +12,8 @@
     "react-dynamic-form": "^1.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-star-rating-component": "^1.4.1",
+    "react-stars-rating": "^0.0.5",
     "react-touch-carousel": "^0.9.3"
   },
   "scripts": {
