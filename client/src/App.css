@@ -9,7 +9,7 @@ main {
 
 main section {
   width: 70%;
-  padding: 90px 0;
+  padding: 20px;
   margin: 50px auto 150px auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -32,9 +32,8 @@ main section div {
   position: relative;
 
 }
-
 main section div p {
-  padding-left: 10px;
+  padding-left: 40px;
 }
 
  /*------------- Services Cards -------------------*/

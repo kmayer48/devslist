@@ -136,7 +136,9 @@ class Main extends React.Component {
 
               <section>
                 <h2>Contact Us</h2>
-                {/* <Contact /> */}
+                <button type="button" className="btn btn-outline-danger">
+                  
+                    </button>
               </section>
             </main>
           </div>

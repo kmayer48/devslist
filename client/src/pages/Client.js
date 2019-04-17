@@ -32,7 +32,7 @@ class Frontend extends React.Component {
       };
 
     handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
         console.log(
             this.state
         
@@ -332,7 +332,7 @@ class Frontend extends React.Component {
  
             
  
-          <button type="button" className="btn btn-danger" onClick={this.handleSubmit}>Save</button>
+              <button type="button" className="btn btn-danger" data-toggle="modal" onClick={this.handleSubmit}>Save</button>
       
         </div>
       );
