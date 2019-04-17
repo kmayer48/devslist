@@ -1,33 +1,44 @@
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth20');
-var keys = require('./keys');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20');
+const keys = require('./keys');
+const User = require('../models/user')
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then((user) => {
+    done(null, user.id);
+  });
+});
 
 passport.use(
-    new GoogleStrategy({
+  new GoogleStrategy({
     // options for the google strategy.
     callbackURL: '/auth/google/redirect',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
-}, (accessToken, refreshToken, profile, done) => {
-    // passport callback function
-    console.log('Passport callback function fired!')
+  }, (accessToken, refreshToken, profile, done) => {
+    // check if user exists in our db
     console.log(profile);
-    var displayName = profile.displayName;
-    var passport_id = profile.id;
-
-    console.log("This is the Display name "+ displayName);
-    console.log("This is the id "+ passport_id);
-
-    // Submits a new post and brings user to blog page upon completion
-    //submitPost(displayName);
-
-    //function submitPost(Post) {
-    //$.post("/api/contacts", Post, function() {
-      //window.location.href = "/index";
-    //});
-  //}
-
-})
+    User.findOne({
+      googleId: profile.id
+    }).then((currentUser) => {
+      if (currentUser) {
+        // already have the user
+        console.log('user is: ', currentUser)
+        done(null, currentUser)
+      } else {
+        // if not, create a user in our db
+        new User({
+          username: profile.displayName,
+          googleId: profile.id
+        }).save().then((newUser) => {
+          console.log('new user created: ' + newUser)
+          done(null, newUser)
+        });
+      }
+    })
+  })
 )
-
-
