@@ -6,7 +6,7 @@ const skills = ["React", "Angular", "CSS", "Html", "JavaScript", "Jquery", "Boot
 class FrontendDev extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = {    
       skills: {}
     };
     skills.forEach(skill => {
@@ -58,7 +58,7 @@ class FrontendDev extends React.Component {
               />
               <label>{key}</label>
             </div>
-          );
+          );  
         })}
         <button onClick={this.submit}>Submit</button>
       </div>
