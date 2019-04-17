@@ -2,8 +2,9 @@ import React from 'react';
 import ImageUploader from 'react-images-upload';
 import "./styleRegister.css";
 import axios from "axios";
+import  { Redirect } from 'react-router-dom'
 
-const skills = ["React", "Angular", "CSS", "Html", "JavaScript", "Jquery", "Bootstrap", "Materialize", "Sass", "LESS", "Heroku", "Git", "GitHub", "Ember", "Backbone", "HandleBars", "Grunt", "Karma", "Mocha","Nodejs", "Java", "PHP", "Python", "Ruby-on-Rails", "Laravel", "Apache", "NGINX", "MySQL", "PostgreSQL", "MongoDB", "Docker", "Kubernetes", "XAMPP", "WampServer", "Laragon", "Jira", "Data-Factory", "Data-Generator" ];
+const skills = ["React", "Angular", "CSS", "Html", "JavaScript", "Jquery", "Bootstrap", "Materialize", "Sass", "LESS", "Heroku", "Git", "GitHub", "Ember", "Backbone", "HandleBars", "Grunt", "Karma", "Mocha","Nodejs", "Java", "PHP", "Python", "Ruby", "Laravel", "Apache", "NGINX", "MySQL", "PostgreSQL", "MongoDB", "Docker", "Kubernetes", "XAMPP", "WampServer", "Laragon", "Jira", "Data-Factory", "Data-Generator" ];
 
 class Register extends React.Component {
 
@@ -127,7 +128,7 @@ submit = () => {
     education: this.state.education,
     certifications: this.state.certifications,
     professionalStatement: this.state.professionalStatement,
-    skillset: [arr]
+    skillset: arr
   }
 
   axios.post(fields)
@@ -150,6 +151,9 @@ submit = () => {
     certifications: "",
     professionalStatement: "",
   })
+
+  return <Redirect to='/profile'/>
+
 };
 
   
@@ -212,8 +216,8 @@ submit = () => {
                 maxFileSize={5242880}
             />
 
-            <input type="file" onChange={this.fileSelectedHandler}/>
-            <button onClick={this.fileUploadHandler}>Upload image!</button>
+            {/* <input type="file" onChange={this.fileSelectedHandler}/>
+            <button onClick={this.fileUploadHandler}>Upload image!</button> */}
 
 
             {this.state.uploadedImage ?  <img className="profileImg" src={this.state.uploadedImage} /> : ''}
@@ -289,7 +293,9 @@ submit = () => {
         })}
           <br/>
           <br/>
-          <button onClick={() => this.submit()}>Submit</button>  
+          <br/>
+          <br/>
+          <button className="submitMe col-md-12" onClick={() => this.submit()}>Submit</button>  
           
         
           
