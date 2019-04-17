@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Card from '../components/card';
 // import cards from '../cards.json';
-import Wrapper from "../components/wrapper"
-import API from "../utils/API"
+import Wrapper from "../components/wrapper";
+import API from "../utils/API";
+import StarRatingComponent from 'react-star-rating-component';
 import '../App.css';
 
 class Discover extends Component {
@@ -12,7 +13,7 @@ class Discover extends Component {
         key:"",
         name:"",
         skills:"",
-        image: ""
+        image: "",
 
     };
 
@@ -62,10 +63,12 @@ class Discover extends Component {
                         name={cards.name}
                         skills={cards.skills}
                         image={cards.image}
-                        >  
+                        >   
                         </Card>
+                        
                 ))}
 
+               
             </Wrapper>
            
 

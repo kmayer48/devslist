@@ -16,6 +16,8 @@
     "react-images-upload": "^1.2.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-star-rating-component": "^1.4.1",
+    "react-stars-rating": "^0.0.5",
     "react-touch-carousel": "^0.9.3"
   },
   "scripts": {
@@ -43,5 +45,4 @@
     "@storybook/react": "^5.0.3",
     "babel-loader": "^8.0.5"
   }
-
 }
