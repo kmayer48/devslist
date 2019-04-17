@@ -4,10 +4,44 @@ body {
     padding-left: 5px;
   }
   
-  .box {
-    width: 99%;
-    border: 1px solid #eee;
-    box-shadow: 10px 10px 5px #888888;
-    padding: 10px;
-    padding-bottom: 20px;
-  }
+.box {
+  width: 60%;
+  height: auto;
+  display: flow-root;
+  margin: 80px auto 60px auto;
+  border: 1px solid #eee;
+  box-shadow: 10px 10px 5px #888888;
+  padding: 30px;
+  padding-bottom: 60px;
+  background-color: rgb(238, 235, 235);
+}
+
+.profileImg {
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+}
+
+.checkBoxes {
+  width: 15px;
+  float: left;
+}
+
+.checkBoxLabels {
+  float: left;
+  margin-right: 10px
+}
+
+input {
+  border-radius: 4px;
+  width: 60%;
+}
+
+body {
+  background-color: rgb(1, 1, 53);
+}
+
+textarea {
+  width:75%;
+  height: 120px;
+}
