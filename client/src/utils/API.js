@@ -9,4 +9,9 @@ export default {
     getCards: function () {
         return axios.get("/api/discover");
     },
+    // Send skills 
+    postDevSkills: function (data) {
+        return axios.post("/api/devSkills", data);
+    },
+
 };
