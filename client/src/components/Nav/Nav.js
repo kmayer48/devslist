@@ -27,7 +27,7 @@ class Nav extends Component {
                 </ul>
               </div>
               <form className="form-inline">
-                <button type="button" className="btn btn-outline-light navbar-btn">Sign in</button>
+               <a href="/auth/google"><button type="button" className="btn btn-outline-light navbar-btn">Sign in</button></a>
               </form>
               {/* <form className="form-inline mt-2 mt-md-0">
                 <input className="form-control mr-sm-2" type="text" placeholder="Search" />

@@ -2,7 +2,6 @@ import React from 'react';
 import "./card.css";
 
 const Card = props => (
-
     <div className="Card" style= {{width: "18rem"}}>
       <div className="devCard text-center" >
         <img src={props.image} className="card-img-top mt-5" alt={props.name}/>

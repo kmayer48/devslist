@@ -1,33 +1,34 @@
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth20');
-var keys = require('./keys');
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
+const user = require('../models/user')
 
-passport.use(
-    new GoogleStrategy({
-    // options for the google strategy.
-    callbackURL: '/auth/google/redirect',
-    clientID: keys.google.clientID,
-    clientSecret: keys.google.clientSecret
-}, (accessToken, refreshToken, profile, done) => {
-    // passport callback function
-    console.log('Passport callback function fired!')
-    console.log(profile);
-    var displayName = profile.displayName;
-    var passport_id = profile.id;
+module.exports = function (passport) {
+  passport.serializeUser(function(user, done){
+    done(null, user)
+  })
+  passport.deserializeUser(function(user, done){
+    done(null, user)
+  })
 
-    console.log("This is the Display name "+ displayName);
-    console.log("This is the id "+ passport_id);
-
-    // Submits a new post and brings user to blog page upon completion
-    //submitPost(displayName);
-
-    //function submitPost(Post) {
-    //$.post("/api/contacts", Post, function() {
-      //window.location.href = "/index";
-    //});
-  //}
-
-})
-)
-
-
+  passport.use(new localStrategy(function(username, password, done){
+    user.findOne({username: username}, function(err, doc){
+      if(err) { done(err)}
+      else {
+        if(doc){
+          doc.comparePassword(password, doc.password)
+          if(valid) {
+            done(null, {
+              username: doc.username,
+              password: doc.password
+            })
+          }
+          else {
+            done(null, false)
+          }
+        } else {
+          done(null, false)
+        }
+      }
+    })
+  }))
+}
