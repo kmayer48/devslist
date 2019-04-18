@@ -64,7 +64,7 @@ class Discover extends Component {
                         image={cards.image}
                         >  
                         </Card>
-                ))}
+                ))}  
 
             </Wrapper>
            
