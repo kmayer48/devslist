@@ -2,13 +2,6 @@ import React from 'react';
 import Radio from "../components/Radio/Radio";
 import API from "../utils/API";
 
-
-
- 
-
-  
-  
-
 class Frontend extends React.Component {
     constructor(props) {
       super(props);
@@ -52,9 +45,7 @@ class Frontend extends React.Component {
         }))
         .catch(err => console.log(err))
 
-        } 
-
-            
+        }   
   
  
     render() {

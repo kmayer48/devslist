@@ -1,15 +1,16 @@
 import axios from "axios";
 
 export default {
-    // Gets all books
-    postQuiz: function (data) {
+    // post the quiz
+    postQuiz: function(data) {
         return axios.post("/api/quiz", data);
     },
-    // Gets the book with the given id
-    getCards: function () {
+    // get cards for developers page
+    getCards: function() {
         return axios.get("/api/discover");
     },
-    register: function (data) {
+    // post registration for site
+    registration: function(data) {
         return axios.post("/api/register", data);
     }
 };

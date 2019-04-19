@@ -45,7 +45,7 @@ const userSchema = new Schema({
         type: String,
     },
     skillset: { 
-        type: String,
+        type: Array,
     },
 });
 
