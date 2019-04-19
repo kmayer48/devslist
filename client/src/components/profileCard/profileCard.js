@@ -12,7 +12,7 @@ const ProfileCard = props => (
         </div>
 
       <div className="col-sm-9">
-      <h3 className="devname">Monique Morales</h3>
+      <h3 className="devname">{props.name}</h3>
       <div className="row">
       <div class="col-sm-4 ml-auto text-center">
             <i class="fas fa-phone fa-3x mb-3 sr-contact-2"></i>
@@ -21,7 +21,7 @@ const ProfileCard = props => (
           <div class="col-sm-4 mr-auto text-center">
             <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
             <p>
-              <a href="mailto:moniquemorales.m@gmail.com">moniquemorales.m@gmail.com</a>
+              <a href="mailto:moniquemorales.m@gmail.com">{props.email}</a>
             </p>
           </div>
       </div>
@@ -30,11 +30,9 @@ const ProfileCard = props => (
       </div>
   
         <hr className="my-4"/>
-        <h6>Startup consultant, web/software developer</h6>
+        <h5 className="position">{props.currentPosition}</h5>
         
-        <p>I am currently looking for new roles in the areas of software and web development.
-            An experienced startup engineer, and veteran of 2 acquisitions, I am more than just an engineer, I am a savvy entrepreneur with experience helping companies grow and change.
-            I also have experience backtesting and live trading algorithmic trading systems in Python. I prefer to deploy onto QuantConnect. If you're building a trading system, I'll discount my posted rate by 10% if I like your plan.</p>
+        <p className="experience">{props.experience}</p>
 
         <hr className="my-4"/>
         <div className= "row">

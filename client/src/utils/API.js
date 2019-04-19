@@ -9,4 +9,10 @@ export default {
     getCards: function () {
         return axios.get("/api/discover");
     },
+    getProfile: function(id){
+        return axios.get("/api/discover/" + id);
+
+    }
+
+
 };
