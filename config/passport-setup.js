@@ -1,44 +1,34 @@
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20');
-const keys = require('./keys');
-const User = require('../models/user')
+const localStrategy = require('passport-local').Strategy;
+const user = require('../models/user')
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+module.exports = function (passport) {
+  passport.serializeUser(function(user, done){
+    done(null, user)
+  })
+  passport.deserializeUser(function(user, done){
+    done(null, user)
+  })
 
-passport.deserializeUser((id, done) => {
-  User.findById(id).then((user) => {
-    done(null, user.id);
-  });
-});
-
-passport.use(
-  new GoogleStrategy({
-    // options for the google strategy.
-    callbackURL: '/auth/google/redirect',
-    clientID: keys.google.clientID,
-    clientSecret: keys.google.clientSecret
-  }, (accessToken, refreshToken, profile, done) => {
-    // check if user exists in our db
-    console.log(profile);
-    User.findOne({
-      googleId: profile.id
-    }).then((currentUser) => {
-      if (currentUser) {
-        // already have the user
-        console.log('user is: ', currentUser)
-        done(null, currentUser)
-      } else {
-        // if not, create a user in our db
-        new User({
-          username: profile.displayName,
-          googleId: profile.id
-        }).save().then((newUser) => {
-          console.log('new user created: ' + newUser)
-          done(null, newUser)
-        });
+  passport.use(new localStrategy(function(username, password, done){
+    user.findOne({username: username}, function(err, doc){
+      if(err) { done(err)}
+      else {
+        if(doc){
+          doc.comparePassword(password, doc.password)
+          if(valid) {
+            done(null, {
+              username: doc.username,
+              password: doc.password
+            })
+          }
+          else {
+            done(null, false)
+          }
+        } else {
+          done(null, false)
+        }
       }
     })
-  })
-)
+  }))
+}
