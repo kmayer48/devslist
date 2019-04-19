@@ -9,4 +9,7 @@ export default {
     getCards: function () {
         return axios.get("/api/discover");
     },
+    register: function (data) {
+        return axios.post("/api/register", data);
+    }
 };

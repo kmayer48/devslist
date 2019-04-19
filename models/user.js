@@ -11,6 +11,42 @@ const userSchema = new Schema({
         type: String, 
         required: true 
     },
+    name: {
+        type: String
+    },
+    email: { 
+        type: String
+    },
+    githubRepo: { 
+        type: String
+    },
+    image: { 
+        type: String
+    },
+    currentPosition: { 
+        type: String
+    },
+    experience: { 
+        type: String
+    },
+    location: { 
+        type: String
+    },
+    education: { 
+        type: String
+    },
+    certifications: { 
+        type: String
+    },
+    professionalStatement: { 
+        type: String,
+    },
+    hourlyRate: { 
+        type: String,
+    },
+    skillset: { 
+        type: String,
+    },
 });
 
 userSchema.methods.hashPassword = function(password) {
