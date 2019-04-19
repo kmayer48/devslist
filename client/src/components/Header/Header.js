@@ -11,7 +11,7 @@ class Header extends Component {
                 <div>
                   <p>
                     <br />
-                    <button type="button" className="btn btn-danger">
+                    <button type="button" className="btn btn-danger" onClick="/Client">
                       Find an expert
                     </button>
                   </p>
