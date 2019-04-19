@@ -21,7 +21,13 @@ class Main extends React.Component {
                 </div>
               </section>
 
-              <div>
+              <div className="jumbotron jumbotron-fluid">
+                <h1 className="text-center mb-3">
+                  LOL
+                </h1>
+              </div>
+
+              <div className="card-container">
                 <h2 className="text-center">OUR SERVICES</h2>
                 <div className="services">
                   <div className="card border-dark mb-3">
@@ -60,6 +66,42 @@ class Main extends React.Component {
                       engineering expertise.
                     </p>
                   </div>
+                  <div className="card border-dark mb-3">
+                    <p className="service-icon">
+                      <i className="fas fa-code" />
+                    </p>
+                    <p className="service-title">Developers</p>
+                    <p>
+                      Maybe that overhaul may require to be more
+                      substantial and it would need for comprehensive
+                      approach from architecttual, coding and
+                      engineering expertise.
+                    </p>
+                  </div>
+                  <div className="card border-dark mb-3">
+                    <p className="service-icon">
+                      <i className="fa-mobile" />
+                    </p>
+                    <p className="service-title">Developers</p>
+                    <p>
+                      Maybe that overhaul may require to be more
+                      substantial and it would need for comprehensive
+                      approach from architecttual, coding and
+                      engineering expertise.
+                    </p>
+                  </div>
+                  <div className="card border-dark mb-3">
+                    <p className="service-icon">
+                      <i className="fa-mobile" />
+                    </p>
+                    <p className="service-title">Developers</p>
+                    <p>
+                      Maybe that overhaul may require to be more
+                      substantial and it would need for comprehensive
+                      approach from architecttual, coding and
+                      engineering expertise.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -72,8 +114,8 @@ class Main extends React.Component {
                 <div className="gallery-item-six" />
               </div>
 
-              <section>
-                <div className="jumbotron jumbotron-fluid">
+              <div className="jumbotron jumbotron-fluid">
+                <section>
                   <h2>Why us</h2>
                   <div>
                     <p>
@@ -89,8 +131,8 @@ class Main extends React.Component {
                       least of pain for you and your team!
                     </p>
                   </div>
-                </div>
-              </section>
+                </section>
+              </div>
 
               <section>
                 <h2>Contact Us</h2>
