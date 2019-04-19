@@ -138,7 +138,7 @@ submit = () => {
 
   API.postDevSkills(fields)
     .then(res => {
-      console.log();
+      console.log("fields", fields)
       this.setState({
         name: "",
         password: "",
@@ -154,22 +154,6 @@ submit = () => {
       })
     
     });
-
-  console.log("fields", fields)
-  //console.log("arr", arr.join(", "));
-  this.setState({
-    name: "",
-    password: "",
-    email: "",
-    githubRepo: "",
-    image: "",
-    currentPosition: "",
-    experience:"",
-    location: "",
-    education: "",
-    certifications: "",
-    professionalStatement: "",
-  })
 
   return <Redirect to='/profile'/>
 

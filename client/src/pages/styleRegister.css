@@ -34,6 +34,8 @@ h5{
 .checkBoxes {
   width: 15px;
   float: left;
+  border-radius: 4px;
+  width: 60%;
 }
 
 .checkBoxLabels {
@@ -42,9 +44,8 @@ h5{
 }
 
 input {
-  border-radius: 4px;
-  width: 60%;
-}
+  
+}  
 
 body {
   background-color: rgb(1, 1, 53);

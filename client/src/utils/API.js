@@ -11,7 +11,7 @@ export default {
     },
     // Send skills 
     postDevSkills: function (data) {
-        return axios.post("/api/devSkills", data);
+        return axios.post("/api/register", data);
     },
 
 };
