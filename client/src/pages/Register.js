@@ -2,7 +2,8 @@ import React from 'react';
 import ImageUploader from 'react-images-upload';
 import "./styleRegister.css";
 import axios from "axios";
-import  { Redirect } from 'react-router-dom'
+import  { Redirect } from 'react-router-dom';
+import API from "../utils/API";
 
 const skills = ["React", "Angular", "CSS", "Html", "JavaScript", "Jquery", "Bootstrap", "Materialize", "Sass", "LESS", "Heroku", "Git", "GitHub", "Ember", "Backbone", "HandleBars", "Grunt", "Karma", "Mocha","Nodejs", "Java", "PHP", "Python", "Ruby", "Laravel", "Apache", "NGINX", "MySQL", "PostgreSQL", "MongoDB", "Docker", "Kubernetes", "XAMPP", "WampServer", "Laragon", "Jira", "Data-Factory", "Data-Generator" ];
 
@@ -15,6 +16,7 @@ class Register extends React.Component {
       fields: {},
       skills: {},
       name: "",
+      username: "",
       password: "",
       email: "",
       githubRepo: "",
@@ -27,6 +29,7 @@ class Register extends React.Component {
       professionalStatement: "",
       pictures: [],
       uploadedImage: '',
+      hourlyRate: '',
       selectedFile: null,
     };
     skills.forEach(skill => {
@@ -118,6 +121,7 @@ submit = () => {
 
   let fields = {
     name: this.state.name,
+    username: this.state.username,
     password: this.state.password,
     email: this.state.email,
     githubRepo: this.state.githubRepo,
@@ -128,12 +132,27 @@ submit = () => {
     education: this.state.education,
     certifications: this.state.certifications,
     professionalStatement: this.state.professionalStatement,
+    hourlyRate: this.state.hourlyRate,
     skillset: arr
   }
 
-  axios.post(fields)
+  API.postDevSkills(fields)
     .then(res => {
-      console.log()
+      console.log();
+      this.setState({
+        name: "",
+        password: "",
+        email: "",
+        githubRepo: "",
+        image: "",
+        currentPosition: "",
+        experience:"",
+        location: "",
+        education: "",
+        certifications: "",
+        professionalStatement: "",
+      })
+    
     });
 
   console.log("fields", fields)
@@ -175,6 +194,17 @@ submit = () => {
             />
             <br/>
             <br/>
+            Username
+            <br/>
+            <input
+                name = "username"
+                type = "username"
+                placeholder="JohnShmoe1992"
+                value={this.state.username}
+                onChange={e => this.change(e)}
+            />
+            <br/>
+            <br/>
             Password
             <br/>
             <input
@@ -209,6 +239,7 @@ submit = () => {
             <br/>
             <lable>Upload an Image</lable>
             <ImageUploader
+                className="imageUpload"
                 withIcon={true}
                 buttonText='Choose image'
                 onChange={this.onDrop}
@@ -221,7 +252,7 @@ submit = () => {
 
 
             {this.state.uploadedImage ?  <img className="profileImg" src={this.state.uploadedImage} /> : ''}
-            <img className="profileImg" src={this.state.uploadedImage} onChange={e=>this.changeImg}/>
+            
            
             <br/>
             <br/>
@@ -263,7 +294,7 @@ submit = () => {
                 value={this.state.education}
                 onChange={e => this.change(e)}
             />
-             <br/>
+            <br/>
             <br/>
           <label>Certifications</label>
             <br/>
@@ -271,6 +302,16 @@ submit = () => {
                 name = "certifications"
                 placeholder=" GW Software Engineering Bootcamp Certification"
                 value={this.state.certifications}
+                onChange={e => this.change(e)}
+            />
+            <br/>
+            <br/>
+          <label>Hourly Rate</label>
+            <br/>
+            <input
+                name = "hourlyRate"
+                placeholder=" $42.00"
+                value={this.state.hourlyRate}
                 onChange={e => this.change(e)}
             />
           <br/>
@@ -281,7 +322,7 @@ submit = () => {
           return (
             <div>
               <input
-                className="checkBoxes "
+                className="checkBoxes"
                 name={key}
                 type="checkbox"
                 checked={isChecked}

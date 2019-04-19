@@ -3,6 +3,15 @@ body {
     padding-right: 5px;
     padding-left: 5px;
   }
+
+h1 {
+  text-align: center;
+}
+
+h5{
+  text-align: center;
+  color: rgb(177, 2, 37);
+}
   
 .box {
   width: 60%;
@@ -68,5 +77,29 @@ textarea {
   box-shadow: black 4px 6px 10px;
   height: 35px;
   width: 110%
+
+}
+
+.imageUpload {
+
+  width: 40%;
+  margin: auto;
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .box {
+    width: 57%;
+    height: auto;
+    display: flow-root;
+    margin: 80px auto 60px auto;
+    border: 1px solid #eee;
+    box-shadow: 5px 5px 5px #888888;
+    padding: 30px;
+    padding-bottom: 60px;
+    background-color: rgb(238, 235, 235);
+  }
+  
 
 }
