@@ -12,6 +12,8 @@ import BackendDev from "./components/BackendDev/backendDev";
 import Technology from './pages/technology';
 import Frontend from "./pages/Client";
 import Profile from './pages/profile';
+import Footer from "./components/Footer/Footer"
+import Login from "./pages/Loginpage"
 
 class App extends Component {
 
@@ -41,6 +43,7 @@ class App extends Component {
 					<Route exact path="/" component={Main} />
 					<Route exact path="/register" component={Register} />
 					<Route exact path="/discover" component={Discover} />
+					<Route exact path="/login" component={Login} />
 					{/* <Route exact path="/devTechnology" component={devTechnology} /> */}
           <Route exact path="/form" component={Form} />
 					<Route exact path="/frontendDev" component={FrontendDev} />
@@ -52,7 +55,7 @@ class App extends Component {
 					<Route exact path="/client" component={Frontend} />
 					<Route component={Notfound} />
 					</Switch>
-					{/* <Footer /> */}
+					<Footer />
 				</div>
 			</Router>
 		);
