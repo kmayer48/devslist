@@ -6,7 +6,6 @@ const quizSchema = new Schema({
         type: String,
         required: true
     },
-
     businessAge: {
         type: String,
         required: true

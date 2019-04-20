@@ -1,4 +1,5 @@
 module.exports = {
     Quiz: require("./quiz"),
-    Card: require("./card")
+    Card: require("./card"),
+    User: require('./user')
 };

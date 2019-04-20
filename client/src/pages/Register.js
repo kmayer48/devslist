@@ -108,7 +108,7 @@ onChange = e => {
 
 
 
-submit = () => {
+submit = (event) => {
   
   let arr = [];
   Object.keys(this.state.skills).forEach(key => {
@@ -136,9 +136,9 @@ submit = () => {
     skillset: arr
   }
 
-  API.postDevSkills(fields)
+  API.register(this.fields)
     .then(res => {
-      console.log();
+      console.log(this.fields);
       this.setState({
         name: "",
         password: "",
@@ -152,7 +152,6 @@ submit = () => {
         certifications: "",
         professionalStatement: "",
       })
-    
     });
 
   console.log("fields", fields)
@@ -227,7 +226,7 @@ submit = () => {
             />
             <br/>
             <br/>
-            <lable>Github URL</lable>
+            <label>Github URL</label>
             <br/>
             <input
                 name = "githubRepo"
@@ -237,7 +236,7 @@ submit = () => {
             />
             <br/>
             <br/>
-            <lable>Upload an Image</lable>
+            <label>Upload an Image</label>
             <ImageUploader
                 className="imageUpload"
                 withIcon={true}
@@ -256,7 +255,7 @@ submit = () => {
            
             <br/>
             <br/>
-            <lable>Current Position</lable>
+            <label>Current Position</label>
             <br/>
             <input
                 name = "currentPosition"
@@ -266,7 +265,7 @@ submit = () => {
             />
             <br/>
             <br/>
-            <lable>Professional Experience</lable>
+            <label>Professional Experience</label>
             <br/>
             <textarea
                 name = "experience"
@@ -276,7 +275,7 @@ submit = () => {
             />
             <br/>
             <br/>
-            <lable>Current Location</lable>
+            <label>Current Location</label>
             <br/>
             <input
                 name = "location"
@@ -286,7 +285,7 @@ submit = () => {
             />
             <br/>
             <br/>
-          <lable>Previous Education</lable>
+          <label>Previous Education</label>
             <br/>
             <textarea
                 name = "education"
