@@ -50,7 +50,7 @@ class App extends Component {
 					<Route exact path="/backendDev" component={BackendDev} />
 					{/* <Route exact path="/profile" component={Profile} /> */}
 					<Route exact path="/technology" component={Technology} />
-					<Route exact path="/profile" component={Profile} />
+					<Route exact path="/profile/:id" component={Profile} />
 					{/* <Route exact path="/profile" component={Profile} /> */}
 					<Route exact path="/client" component={Frontend} />
 					<Route component={Notfound} />

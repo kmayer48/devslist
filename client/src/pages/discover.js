@@ -3,18 +3,21 @@ import Card from '../components/card';
 // import cards from '../cards.json';
 import Wrapper from "../components/wrapper";
 import API from "../utils/API";
-import StarRatingComponent from 'react-star-rating-component';
+// import StarRatingComponent from 'react-star-rating-component';
 import '../App.css';
+import  { Redirect } from 'react-router-dom';
 
 class Discover extends Component {
 
     state = {
         cards: [],
-        key:"",
-        name:"",
+        id:"",
         skills:"",
-        image: "",
-
+        name:"",
+        image:[],
+        currentPostion:"",
+        location:"",
+        
     };
 
     componentDidMount() {
@@ -24,34 +27,15 @@ class Discover extends Component {
       loadCards = () => {
         API.getCards()
           .then(res =>
-            this.setState({ cards: res.data, key: "", name: "", skills: "", image: ""  })
-
+            this.setState({ cards: res.data, key: "", skills: "", name: "", image:[] ,currentPostion:"",location:""  })
 
           )
           .catch(err => console.log(err));
+
+          return <Redirect to='/profile'/>
       };
   
-
-    // handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
-
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
+      
 
     render(){
         return(
@@ -63,6 +47,9 @@ class Discover extends Component {
                         name={cards.name}
                         skills={cards.skills}
                         image={cards.image}
+                        currentPostion={cards.currentPostion}
+                        location={cards.location}
+                        id={cards._id}
                         >   
                         </Card>
                         
