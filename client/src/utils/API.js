@@ -10,9 +10,12 @@ export default {
         return axios.get("/api/discover");
     },
     getProfile: function(id){
-        return axios.get("/api/discover/" + id);
+        return axios.get("/api/discover/profile/" + id);
+    },
 
-    }
-
+    // Send skills 
+    postDevSkills: function (data) {
+        return axios.post("/api/register", data);
+    },
 
 };

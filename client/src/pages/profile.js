@@ -10,21 +10,20 @@ class Profile extends Component {
         profile:{}
     };
 
-    
-    componentDidMount(){
-        this.loadCards();
-    } 
-    loadCards = () => {
+    componentDidMount() {
         API.getProfile(this.props.match.params.id)
-        .then(res => {console.log(this.props.match.params.id);this.setState({ profile: res.data })})
-        .catch(err => console.log(err));
-    }
+          .then(res => this.setState({ profile: res.data }))
+          .catch(err => console.log(err));
+      }
+
+
       
 
     render(){
         return(
             <Wrapper>
                 <ProfileCard>
+                    <p>hello</p>
                 <h1>
                 {this.state.profile.name} by {this.state.profile.skills}
               </h1>

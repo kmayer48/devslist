@@ -7,6 +7,6 @@ router.route("/")
 });
 
 router.route("/profile/:id")
-.get(cardController.findById)
+.get(cardController.findById);
 
 module.exports = router;

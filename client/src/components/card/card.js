@@ -12,7 +12,7 @@ const Card = props => (
           <h6 className="card-position">{props.currentPosition}</h6>
           <h6 className="card-text">Skills:</h6>
           <h6 className="card-skills">{props.skills}</h6>
-          <Link key={Card._id} to={"/api/discover/profile/"+ props.id} > 
+          <Link to={"/profile/"+ props.id} > 
           <button className="btn btn-primary mt-5">View Profile</button>
           </Link>
           
