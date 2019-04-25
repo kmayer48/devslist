@@ -1,11 +1,6 @@
 import React from 'react';
 import Radio from "../components/Radio/Radio";
-
-
- 
-
-  
-  
+import API from "../utils/API";
 
 class Frontend extends React.Component {
     constructor(props) {
@@ -32,12 +27,25 @@ class Frontend extends React.Component {
       };
 
     handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
         console.log(
-            this.state
-        
-        )} 
-        // Make API call 
+            this.state )
+        API.postQuiz(this.state) 
+        .then(res => 
+        this.setState({
+            company  : "",
+            businessAge : "",
+            websiteGoal : "",
+            siteBranding : "",
+            siteInfoStorage : "",
+            siteLogo : "",
+            mobileApp : "",
+            mobileResponsive : "",
+            meetDev : ""
+        }))
+        .catch(err => console.log(err))
+
+        }   
   
  
     render() {
@@ -332,7 +340,7 @@ class Frontend extends React.Component {
  
             
  
-          <button type="button" className="btn btn-danger" onClick={this.handleSubmit}>Save</button>
+              <button type="button" className="btn btn-danger" data-toggle="modal" onClick={this.handleSubmit}>Save</button>
       
         </div>
       );

@@ -7,21 +7,21 @@ const ProfileCard = props => (
       <div className="profCard text-center" >      
       <div className="jumbotron">
       <div className="row">
-      <div class="col-sm-3">
-        <img src="https://static1.squarespace.com/static/549dd0cee4b029881efa814b/5b101ad2758d46ee70365c19/5b101ad62b6a2888d277765c/1543878073836/dc-headshot-photographer-97.JPG" style= {{width:"100%" }} className="rounded-circle" alt="Tommy"></img>
+      <div className="col-sm-3">
+        <img src="https://vignette.wikia.nocookie.net/nickelodeon/images/8/8c/Tommy_Pickles_in_Newer_Years.png/revision/latest?cb=20190206172923" style= {{width:"100%" }} className="rounded-circle" alt="Tommy"></img>
         </div>
 
       <div className="col-sm-9">
-      <h3 className="devname">Monique Morales</h3>
+      <h3 className="devname">{props.name}</h3>
       <div className="row">
-      <div class="col-sm-4 ml-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-2"></i>
+      <div className="col-sm-4 ml-auto text-center">
+            <i className="fas fa-phone fa-3x mb-3 sr-contact-2"></i>
             <p>571-606-6253</p>
           </div>
-          <div class="col-sm-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          <div className="col-sm-4 mr-auto text-center">
+            <i className="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
             <p>
-              <a href="mailto:moniquemorales.m@gmail.com">moniquemorales.m@gmail.com</a>
+              <a href="mailto:moniquemorales.m@gmail.com">tpicklesgotyou@gmail.com {props.email}</a>
             </p>
           </div>
       </div>
@@ -30,22 +30,26 @@ const ProfileCard = props => (
       </div>
   
         <hr className="my-4"/>
-        <h6>Startup consultant, web/software developer</h6>
+        <h5 className="position">{props.currentPosition}</h5>
         
-        <p>I am currently looking for new roles in the areas of software and web development.
-            An experienced startup engineer, and veteran of 2 acquisitions, I am more than just an engineer, I am a savvy entrepreneur with experience helping companies grow and change.
-            I also have experience backtesting and live trading algorithmic trading systems in Python. I prefer to deploy onto QuantConnect. If you're building a trading system, I'll discount my posted rate by 10% if I like your plan.</p>
+        <p className="experience">{props.experience}
+        For over 15 years, I spent developing and customizing Websites, Themes and Plug-ins. Fluent in HTML, CSS, WordPress and Shopify. I provide assistance and support to clients of all types, bloggers, small and corporate business types. I am self motivated, educated and timely organized delivering top quality service, because your 100% satisfaction is my most important goal. 
+
+Other then building and customizing for the Web, I've setup and launched Shopify online e-commerce stores for clients, tweaked themes and implemented variety of plugins. I've built portals, integrated API for Facebook, Stripe and Twitter. One of my early Web Apps I've personally built was called Tweetbits that got high exposure and popularity, with over 100,000 users.
+
+My skills and consists of; HTML(5), CSS(3 and Scss), WordPress, Shopify, Rails, API, XML. I'm in the process of learning React and AngularJS. 
+
+        </p>
 
         <hr className="my-4"/>
         <div className= "row">
-            <div className= 'col-sm-4'>
-            <p>hourly rate:</p>
+            <div className= 'col-sm-6'>
+            <p className="money">hourly rate:</p>
+            <p className="money"> $75</p>
             </div>
-            <div className= 'col-sm-4'>
-            <p>Jobs completed: </p>
-            </div>
-            <div className= 'col-sm-4'>
-            <p>Rating: </p>
+            <div className= 'col-sm-6'>
+            <p className="skillschecked">{props.skills} </p>
+            <p className="skills">react node CSS mySQL mongo</p>
             </div>
         </div>
     

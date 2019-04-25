@@ -2,15 +2,22 @@
   "name": "testapp1",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3002/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.4",
     "react-dynamic-form": "^1.0.1",
+    "react-flip-move": "^3.0.3",
+    "react-images-upload": "^1.2.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-star-rating-component": "^1.4.1",
+    "react-stars-rating": "^0.0.5",
     "react-touch-carousel": "^0.9.3"
   },
   "scripts": {

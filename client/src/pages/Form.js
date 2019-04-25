@@ -23,12 +23,12 @@ class Form extends React.Component {
    }
 
    onSubmit = e => {
-       e.preventDefault();
+       e.preventDefault();  
        this.props.onSubmit()
        console.log(this.state);
        this.setState({
            businessType: "",
-           businessAge: "",
+           businessAge: "",   
            webSiteGoal: "",
            siteFunction: "",
            siteInfoStorage: "",
@@ -115,7 +115,7 @@ class Form extends React.Component {
                    onChange={e => this.change(e)}
                />
                <br/>
-<button onClick={() => this.onSubmit()}>Submit</button>
+            <button onClick={() => this.onSubmit()}>Submit</button>
            </form>
        );
    }

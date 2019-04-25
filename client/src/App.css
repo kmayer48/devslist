@@ -9,7 +9,7 @@ main {
 
 main section {
   width: 70%;
-  padding: 90px 0;
+  padding: 20px;
   margin: 50px auto 150px auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -22,7 +22,7 @@ main section h2 {
  color: #ddd;
  text-transform: uppercase;
  line-height: 4.2rem; 
- padding-right: 10px;
+ padding-right: 20px;
  border-right: 3px solid #ddd;
 }
 
@@ -32,9 +32,14 @@ main section div {
   position: relative;
 
 }
-
 main section div p {
-  padding-left: 10px;
+  padding-left: 40px;
+}
+
+#contactBtn {
+  width: 160px;
+  height: 40px;
+  margin-left: 30px;
 }
 
  /*------------- Services Cards -------------------*/
@@ -95,3 +100,31 @@ main section div p {
   border-bottom: 1px solid #282c34;
   padding: 30px;
 }
+
+/* -------Login------------- */
+
+
+
+.login-container {
+  background: #eee;
+  padding-bottom: 500px;
+  margin-bottom: -80px;
+}
+
+.wrapper {	
+  margin-top: 55px;
+}
+
+.wrapper .btn {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1); 
+  font-family: 'PT Sans Narrow', sans-serif; 
+}
+

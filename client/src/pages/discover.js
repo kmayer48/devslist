@@ -1,64 +1,61 @@
 import React, { Component } from 'react';
 import Card from '../components/card';
-import cards from '../cards.json';
-import Wrapper from "../components/wrapper"
+// import cards from '../cards.json';
+import Wrapper from "../components/wrapper";
+import API from "../utils/API";
+// import StarRatingComponent from 'react-star-rating-component';
 import '../App.css';
+import  { Redirect } from 'react-router-dom';
 
 class Discover extends Component {
 
     state = {
-        cards,
-
+        cards: [],
+        id:"",
+        skills:"",
+        name:"",
+        image:[],
+        currentPostion:"",
+        location:"",
+        
     };
 
-    // componentDidMount() {
-    //     this.loadBooks();
-    //   }
+    componentDidMount() {
+        this.loadCards();
+      }
     
-    //   loadBooks = () => {
-    //     API.getBooks()
-    //       .then(res =>
-    //         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //       )
-    //       .catch(err => console.log(err));
-    //   };
+      loadCards = () => {
+        API.getCards()
+          .then(res =>
+            this.setState({ cards: res.data, key: "", skills: "", name: "", image:[] ,currentPostion:"",location:""  })
 
-    // handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
+          )
+          .catch(err => console.log(err));
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
+          return <Redirect to='/profile'/>
+      };
+  
+      
 
     render(){
         return(
             <Wrapper>
-                {this.state.cards.map(card => (
+                {this.state.cards.map(cards => (
 
                         <Card
-                        id={card.id}
-                        key={card.id}
-                        name={card.name}
-                        skills={card.skills}
-                        image={card.image}
-                        >  
+                        key={cards._id}
+                        name={cards.name}
+                        skills={cards.skills}
+                        image={cards.image}
+                        currentPostion={cards.currentPostion}
+                        location={cards.location}
+                        id={cards._id}
+                        >   
                         </Card>
+                        
                 ))}
 
+               
             </Wrapper>
            
 

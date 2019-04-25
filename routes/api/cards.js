@@ -6,4 +6,7 @@ router.route("/")
   cardController.findAll(req, res)
 });
 
+router.route("/profile/:id")
+.get(cardController.findById);
+
 module.exports = router;

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from "../components/Header/Header";
+import Contact from "../components/Modals/Contact"
+
+
 class Main extends React.Component {
 
     render() {
@@ -136,7 +139,9 @@ class Main extends React.Component {
 
               <section>
                 <h2>Contact Us</h2>
-                {/* <Contact /> */}
+                <button type="button" className="btn btn-outline-danger" id="contactBtn" data-toggle="modal">
+                  info@devslist.com
+                </button>
               </section>
             </main>
           </div>

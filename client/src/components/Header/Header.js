@@ -9,12 +9,12 @@ class Header extends Component {
               <div className="head">
                 <h1>Devs List</h1>
                 <div>
-                  <p>
+                  {/* <p>
                     <br />
-                    <button type="button" className="btn btn-danger">
+                    <button type="button" className="btn btn-danger" onClick="/Client">
                       Find an expert
                     </button>
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
